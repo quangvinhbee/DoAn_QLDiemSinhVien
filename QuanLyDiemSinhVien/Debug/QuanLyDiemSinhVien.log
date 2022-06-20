@@ -1,0 +1,12 @@
+﻿  main.cpp
+C:\Users\CUONG NGUYEN\source\repos\QuanLyDiemSinhVien\QuanLyDiemSinhVien\MonHoc.h(257,6): warning C4101: 'key': unreferenced local variable
+C:\Users\CUONG NGUYEN\source\repos\QuanLyDiemSinhVien\QuanLyDiemSinhVien\SinhVien.h(140,46): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\CUONG NGUYEN\source\repos\QuanLyDiemSinhVien\QuanLyDiemSinhVien\LopTinChi.h(382,6): warning C4101: 'key': unreferenced local variable
+C:\Users\CUONG NGUYEN\source\repos\QuanLyDiemSinhVien\QuanLyDiemSinhVien\XulyTam.h(316,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\CUONG NGUYEN\source\repos\QuanLyDiemSinhVien\QuanLyDiemSinhVien\XulyTam.h(348,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\CUONG NGUYEN\source\repos\QuanLyDiemSinhVien\QuanLyDiemSinhVien\DiemMonHocCuaLop.h(242,9): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\CUONG NGUYEN\source\repos\QuanLyDiemSinhVien\QuanLyDiemSinhVien\MonHoc.h(181): warning C4715: 'IsDeleteSubject': not all control paths return a value
+C:\Users\CUONG NGUYEN\source\repos\QuanLyDiemSinhVien\QuanLyDiemSinhVien\MonHoc.h(347): warning C4715: 'ChooseSubject': not all control paths return a value
+C:\Users\CUONG NGUYEN\source\repos\QuanLyDiemSinhVien\QuanLyDiemSinhVien\SinhVien.h(232): warning C4715: 'IsDeletedTail': not all control paths return a value
+C:\Users\CUONG NGUYEN\source\repos\QuanLyDiemSinhVien\QuanLyDiemSinhVien\LopTinChi.h(74): warning C4715: 'FindCreditClassWithIdSubject': not all control paths return a value
+  QuanLyDiemSinhVien.vcxproj -> C:\Users\CUONG NGUYEN\source\repos\QuanLyDiemSinhVien\Debug\QuanLyDiemSinhVien.exe
