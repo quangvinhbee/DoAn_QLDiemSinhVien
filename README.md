@@ -1,4 +1,4 @@
-# DoAn_QLDiemSinhVien
+# Đồ Án Quản Lý Điểm Sinh Viên
 Data Structure C++
 #### 1. Tài liệu tham khảo:
 - https://cuuduongthancong.com/pvf/1733562/cau-truc-du-lieu-va-giai-thuat//ctdlgt_lt.pdf?src=afile&action=hover
