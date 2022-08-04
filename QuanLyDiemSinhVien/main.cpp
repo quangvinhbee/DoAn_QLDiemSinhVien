@@ -5,10 +5,10 @@
 #include<iostream>
 #include <typeinfo>
 #include "DiemMonHocCuaLop.h"
-using namespace std;
 #include <Windows.h>
 
 
+using namespace std;
 int main()
 {
 

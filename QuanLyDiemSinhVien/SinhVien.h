@@ -1,5 +1,5 @@
-#ifndef _STUDENT_H
 #define _STUDENT_H
+#define MAXSINHVIEN 5000
 #pragma warning(disable : 4996)
 #include"LopTinChi.h"
 
@@ -15,142 +15,59 @@ struct student {
 };
 typedef struct student STUDENT;
 
-struct NodeStudent {
-	STUDENT _student;
-	struct NodeStudent* pNext;
-};
-typedef struct NodeStudent NODE_STUDENT;
-
 struct ListStudent {
 	int n = 0;
-	NODE_STUDENT* pHead, * pTail;
+	STUDENT ListST[MAXSINHVIEN];
 };
 typedef struct ListStudent LIST_STUDENT;
 
-NODE_STUDENT* GetNodeStudent(STUDENT DATA)
-{
-	NODE_STUDENT* p = new NodeStudent; //init pointer
-	if (p == NULL)
-		return NULL;
-	p->_student = DATA; // export data to node;
-	p->pNext = NULL; //init link list
-	return p;
-}
+
 
 void InitListStudent(LIST_STUDENT& l)
 {
-	l.pHead = l.pTail = NULL;
 }
 
 void AddHeadListStudent(LIST_STUDENT& l, STUDENT data)
 {
-
-	NODE_STUDENT* p = GetNodeStudent(data);
-	p->pNext = l.pHead;
-	l.pHead = p;
-
-	++l.n;
+	if (l.n == MAXSINHVIEN) {
+		return;
+	}
+	for (int i =  l.n; i >0; i-- ) {
+		l.ListST[i] = l.ListST[i - 1];
+	}
+	l.ListST[0] = data;
 }
 
 bool ListStudentIsEmty(LIST_STUDENT l)
 {
-	return l.pHead = NULL;
+	return l.n = 0;
 }
 
 void AddTailListStudent(LIST_STUDENT& l, STUDENT data)
 {
-	NODE_STUDENT* p = GetNodeStudent(data);
-	if (l.pHead == NULL)
-	{
-		l.pHead = l.pTail = p;
-	}
-	else
-	{
-		l.pTail->pNext = p;
-		l.pTail = p;
-	}
+	l.ListST[l.n] = data;
 
 	++l.n;
 }
 
-NODE_STUDENT* FindStudent(LIST_STUDENT l, char* id)
+STUDENT FindStudent(LIST_STUDENT l, char* id)
 {
-	if (l.pHead == NULL) return NULL;
-
-	for (NODE_STUDENT* p = l.pHead; p != NULL; p = p->pNext)
-		if (strcmp(p->_student.idStudent, id) == 0)
-			return p;
-	return NULL;
-}
-
-NODE_STUDENT* Middle(NODE_STUDENT* start, NODE_STUDENT* last)
-{
-	if (start == NULL)
-		return NULL;
-	NODE_STUDENT* slow = start;
-	NODE_STUDENT* fast = start->pNext;
-
-	while (fast != last)
-	{
-		fast = fast->pNext;
-		if (fast != last)
-		{
-			slow = slow->pNext;
-			fast = fast->pNext;
+	for (int i = 0; i < l.n; i++) {
+		if (strcmp(l.ListST[i].idStudent, id) == 0) {
+			return l.ListST[i];
 		}
 	}
-	return slow;
 }
 
-NODE_STUDENT* BinarySearchStudent(LIST_STUDENT l, char* id)
-{
-	NODE_STUDENT* start = l.pHead;
-	NODE_STUDENT* last = NULL;
-	if (l.pHead == NULL) return NULL;
-	do
-	{
-		NODE_STUDENT* p = Middle(start, last);
 
-		if (p == NULL) return NULL;
-
-		if (strcmp(p->_student.idStudent, id) == 0)
-			return p;
-		else if (strcmp(p->_student.idStudent, id) < 0)
-		{
-
-			start = p->pNext;
-		}
-		else
-		{
-
-			last = p;
-		}
-	} while (start != last);
-	return NULL; // value not present;
-
-}
-
-int FindIndexStudent(LIST_STUDENT l, char* id)
-{
-	int index = -1;
-	if (l.pHead == NULL) return -1;
-	for (NODE_STUDENT* p = l.pHead; p != NULL; p = p->pNext)
-	{
-		++index;
-		if (strcmp(p->_student.idStudent, id) == 0);
-		return index;
-	}
-	return 0;
-}
-
-NODE_STUDENT* FindStudentByOrdinal(LIST_STUDENT l, int ordinal)
+STUDENT FindStudentByOrdinal(LIST_STUDENT l, int ordinal)
 {
 	if (l.pHead == NULL) return NULL;
 	if (l.n - 1 < ordinal) return NULL;
 	if (l.n - 1 == ordinal) return l.pTail;
 	if (ordinal == 0) return l.pHead;
 
-	NODE_STUDENT* p = l.pHead;
+	STUDENT p = l.pHead;
 	int count = 0;
 	while (count != ordinal)
 	{
@@ -161,10 +78,10 @@ NODE_STUDENT* FindStudentByOrdinal(LIST_STUDENT l, int ordinal)
 }
 
 
-void InsertAfter(NODE_STUDENT* p, STUDENT& data)
+void InsertAfter(STUDENT p, STUDENT& data)
 {
 	if (p == NULL) return;
-	NODE_STUDENT* q = new NODE_STUDENT;
+	STUDENT q = new STUDENT;
 
 	q->_student = data;
 	q->pNext = p->pNext;
@@ -179,7 +96,7 @@ void InsertOrderForListStudent(LIST_STUDENT& l, STUDENT data)
 		return;
 	}
 
-	NODE_STUDENT* p, * pAfter = NULL, * pBefore = NULL;
+	STUDENT p, * pAfter = NULL, * pBefore = NULL;
 	p = GetNodeStudent(data);
 
 	for (pAfter = l.pHead; pAfter != NULL && (strcmp(pAfter->_student.idStudent, data.idStudent) < 0); pBefore = pAfter, pAfter = pAfter->pNext);
@@ -203,7 +120,7 @@ void InsertOrderForListStudent(LIST_STUDENT& l, STUDENT data)
 bool IsDeletedHead(LIST_STUDENT& l)
 {
 	if (ListStudentIsEmty(l)) return false;
-	NODE_STUDENT* p = l.pHead;
+	STUDENT p = l.pHead;
 
 	l.pHead = p->pNext;
 	delete p;
@@ -215,8 +132,8 @@ bool IsDeletedTail(LIST_STUDENT& l)
 {
 	if (ListStudentIsEmty(l)) return false;
 
-	NODE_STUDENT* beforeP = NULL;
-	for (NODE_STUDENT* p = l.pHead; p != NULL; p = p->pNext)
+	STUDENT beforeP = NULL;
+	for (STUDENT p = l.pHead; p != NULL; p = p->pNext)
 	{
 		if (p == l.pTail)
 		{
@@ -231,10 +148,10 @@ bool IsDeletedTail(LIST_STUDENT& l)
 	}
 }
 
-bool IsDeletedAfter(LIST_STUDENT& l, NODE_STUDENT* p)
+bool IsDeletedAfter(LIST_STUDENT& l, STUDENT p)
 {
 	if (p == NULL || p->pNext == NULL) return false;
-	NODE_STUDENT* nodeDeleted = p->pNext;
+	STUDENT nodeDeleted = p->pNext;
 	p->pNext = nodeDeleted->pNext;
 	delete nodeDeleted;
 	--l.n;
@@ -243,13 +160,13 @@ bool IsDeletedAfter(LIST_STUDENT& l, NODE_STUDENT* p)
 
 bool IsDeletedStudentWithId(LIST_STUDENT& l, STUDENT data)
 {
-	NODE_STUDENT* nodeDeleted = BinarySearchStudent(l, data.idStudent);   //FindStudent(l, data.idStudent);
+	STUDENT nodeDeleted = BinarySearchStudent(l, data.idStudent);   //FindStudent(l, data.idStudent);
 	if (nodeDeleted == NULL) return false;
 	if (nodeDeleted == l.pHead) return IsDeletedHead(l);
 	if (nodeDeleted == l.pTail) return IsDeletedTail(l);
 	else
 	{
-		NODE_STUDENT* temp = l.pHead;
+		STUDENT temp = l.pHead;
 		while (temp->pNext != nodeDeleted)
 			temp = temp->pNext;
 		return IsDeletedAfter(l, temp);
@@ -260,7 +177,7 @@ bool IsDeletedStudentWithId(LIST_STUDENT& l, STUDENT data)
 bool ClearListStudent(LIST_STUDENT& l)
 {
 	if (l.pHead) return false;
-	NODE_STUDENT* temp;
+	STUDENT temp;
 	while (l.pHead != NULL)
 	{
 		temp = l.pHead;
@@ -288,7 +205,7 @@ void OutputListStudentWithIdClassPerPage(LIST_STUDENT l, int indexBegin)
 {
 	if (l.pHead == NULL && l.pTail == NULL) return;
 	int count = -1;
-	for (NODE_STUDENT* q = l.pHead; q != NULL; q = q->pNext)
+	for (STUDENT q = l.pHead; q != NULL; q = q->pNext)
 	{
 		count++;
 		if (count == indexBegin)
@@ -428,7 +345,7 @@ void InputStudent(LIST_STUDENT& l, STUDENT& st, bool isEdited = false)
 
 				if (isEdited)
 				{
-					NODE_STUDENT* p = FindStudent(l, st.idStudent);
+					STUDENT p = FindStudent(l, st.idStudent);
 					p->_student = st;
 				}
 				else
@@ -472,7 +389,7 @@ void ChangePageChooseStudent(LIST_STUDENT l)
 	currposPrecStudent = (pageNowStudent - 1) * QUANTITY_PER_PAGE;
 }
 
-NODE_STUDENT* ChooseStudent(LIST_STUDENT l)
+STUDENT ChooseStudent(LIST_STUDENT l)
 {
 	int keyboard_read = 0;
 	ShowCur(false);
@@ -481,8 +398,8 @@ NODE_STUDENT* ChooseStudent(LIST_STUDENT l)
 	currposPrecStudent = (pageNowStudent - 1) * QUANTITY_PER_PAGE;
 	totalPageStudent = ((l.n - 1) / QUANTITY_PER_PAGE) + 1;
 
-	NODE_STUDENT* newNodeStudent = FindStudentByOrdinal(l, currposStudent);
-	NODE_STUDENT* oldNodeStudent = NULL;
+	STUDENT newNodeStudent = FindStudentByOrdinal(l, currposStudent);
+	STUDENT oldNodeStudent = NULL;
 
 	OutputListStudentWithIdClassPerPage(l, (pageNowStudent - 1) * QUANTITY_PER_PAGE);
 	SetDefaultChooseStudent(newNodeStudent->_student, currposStudent);
@@ -576,7 +493,7 @@ backMenu:
 		LIST_STUDENT temp;
 		InitListStudent(temp);
 		int n = 0;
-		for (NODE_STUDENT* p = l.pHead; p != NULL; p = p->pNext)
+		for (STUDENT p = l.pHead; p != NULL; p = p->pNext)
 		{
 			if (strcmp(p->_student.idClass, (char*)idClass.c_str()) == 0)
 			{
@@ -619,7 +536,7 @@ backMenu:
 					}
 					else if (key == KEY_F3)
 					{
-						NODE_STUDENT* k = ChooseStudent(temp);
+						STUDENT k = ChooseStudent(temp);
 						if (k == NULL) goto backMenu;
 
 						Gotoxy(X_NOTIFY, Y_NOTIFY);
@@ -628,7 +545,7 @@ backMenu:
 						if (key == ENTER)
 						{
 							string temps = k->_student.idStudent;
-							NODE_STUDENT* p = FindStudent(l, (char*)temps.c_str());
+							STUDENT p = FindStudent(l, (char*)temps.c_str());
 							IsDeletedStudentWithId(l, p->_student);
 							if (IsDeletedStudentWithId(temp, k->_student))
 							{
@@ -645,13 +562,13 @@ backMenu:
 					}
 					else if (key == KEY_F4)
 					{
-						NODE_STUDENT* k = ChooseStudent(temp);
+						STUDENT k = ChooseStudent(temp);
 						if (k == NULL) goto backMenu;
 
 						DisplayEdit(keyDisplayStudent, sizeof(keyDisplayStudent) / sizeof(string), 35);
 						InputStudent(l, k->_student, true);
 
-						NODE_STUDENT* p = BinarySearchStudent(l, k->_student.idStudent);
+						STUDENT p = BinarySearchStudent(l, k->_student.idStudent);
 						p = k;
 
 						clrscr();
