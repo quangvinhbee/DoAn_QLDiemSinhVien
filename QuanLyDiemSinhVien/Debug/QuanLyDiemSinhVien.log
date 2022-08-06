@@ -1,12 +1,235 @@
 ﻿  main.cpp
 D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\MonHoc.h(257,6): warning C4101: 'key': unreferenced local variable
-D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(140,46): warning C4390: ';': empty controlled statement found; is this the intent?
-D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\LopTinChi.h(382,6): warning C4101: 'key': unreferenced local variable
-D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\XulyTam.h(316,20): warning C4018: '<': signed/unsigned mismatch
-D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\XulyTam.h(348,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\DiemMonHocCuaLop.h(242,9): warning C4553: '==': result of expression not used; did you intend '='?
-D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\MonHoc.h(181): warning C4715: 'IsDeleteSubject': not all control paths return a value
-D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\MonHoc.h(347): warning C4715: 'ChooseSubject': not all control paths return a value
-D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(232): warning C4715: 'IsDeletedTail': not all control paths return a value
-D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\LopTinChi.h(74): warning C4715: 'FindCreditClassWithIdSubject': not all control paths return a value
-  QuanLyDiemSinhVien.vcxproj -> D:\WORKSPACE\C++\QLDSV\Debug\QuanLyDiemSinhVien.exe
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(67,8): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(67,34): error C2440: 'return': cannot convert from 'int' to 'STUDENT'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(67,34): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(68,36): error C2440: 'return': cannot convert from 'int' to 'STUDENT'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(68,36): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(69,35): error C2039: 'pTail': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(70,29): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(72,16): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(76,8): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(76,8): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(76,10): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(85,15): error C2678: binary '==': no operator found which takes a left-hand operand of type 'STUDENT' (or there is no acceptable conversion)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\guiddef.h(192,15): message : could be 'bool operator ==(const GUID &,const GUID &)'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(85,15): message : while trying to match the argument list '(STUDENT, int)'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(86,25): error C2440: 'initializing': cannot convert from 'STUDENT *' to 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(86,25): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(88,3): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(88,3): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(88,5): error C2039: '_student': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(89,3): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(89,3): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(89,5): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(89,14): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(89,14): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(89,16): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(90,3): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(90,3): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(90,5): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(95,8): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(102,6): error C3861: 'GetNodeStudent': identifier not found
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(104,18): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(104,59): error C2039: '_student': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(104,136): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(106,18): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(108,26): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(108,26): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(108,28): error C2039: '_student': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(108,36): error C2660: 'AddHeadListStudent': function does not take 1 arguments
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(31,6): message : see declaration of 'AddHeadListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(114,4): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(114,4): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(114,6): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(115,12): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(125,16): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(127,4): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(127,13): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(127,13): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(127,15): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(128,10): error C2440: 'delete': cannot convert from 'STUDENT' to 'void*'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(128,9): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(137,24): error C2440: 'initializing': cannot convert from 'int' to 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(137,24): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(138,21): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(138,37): error C2678: binary '!=': no operator found which takes a left-hand operand of type 'STUDENT' (or there is no acceptable conversion)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\guiddef.h(197,15): message : could be 'bool operator !=(const GUID &,const GUID &)'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(138,37): message : while trying to match the argument list '(STUDENT, int)'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(138,44): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(138,44): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(138,46): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(140,14): error C2039: 'pTail': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(142,6): error C2039: 'pTail': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(143,11): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(143,11): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(143,13): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(144,12): error C2440: 'delete': cannot convert from 'STUDENT' to 'void*'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(144,11): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(155,5): error C2678: binary '==': no operator found which takes a left-hand operand of type 'STUDENT' (or there is no acceptable conversion)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\guiddef.h(192,15): message : could be 'bool operator ==(const GUID &,const GUID &)'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(155,5): message : while trying to match the argument list '(STUDENT, int)'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(155,5): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(155,5): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(155,22): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(156,25): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(156,25): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(156,27): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(157,3): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(157,3): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(157,5): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(157,24): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(157,24): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(157,26): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(158,20): error C2440: 'delete': cannot convert from 'STUDENT' to 'void*'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(158,9): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(165,24): error C3861: 'BinarySearchStudent': identifier not found
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(166,25): error C2678: binary '==': no operator found which takes a left-hand operand of type 'STUDENT' (or there is no acceptable conversion)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\guiddef.h(192,15): message : could be 'bool operator ==(const GUID &,const GUID &)'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(166,25): message : while trying to match the argument list '(STUDENT, int)'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(167,23): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(168,23): error C2039: 'pTail': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(171,20): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(172,14): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(172,14): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(172,16): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(173,15): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(173,15): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(173,17): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(181,8): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(183,11): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(185,12): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(186,5): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(186,15): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(187,14): error C2440: 'delete': cannot convert from 'STUDENT' to 'void*'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(187,10): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(430,29): error C2039: 'pHead': is not a member of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(19): message : see declaration of 'ListStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(430,50): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(430,50): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(430,52): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(430,108): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(430,108): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(430,110): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(431,56): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(431,56): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(431,58): error C2039: '_student': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(431,82): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(431,82): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(431,84): error C2039: '_student': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(431,92): error C2660: 'EffectiveMenuStudent': function does not take 1 arguments
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(387,6): message : see declaration of 'EffectiveMenuStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(435,7): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(435,7): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(435,86): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(439,36): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(439,36): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(439,38): error C2039: 'pNext': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(440,56): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(440,56): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(440,58): error C2039: '_student': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(440,82): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(440,82): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(440,84): error C2039: '_student': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(440,92): error C2660: 'EffectiveMenuStudent': function does not take 1 arguments
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(387,6): message : see declaration of 'EffectiveMenuStudent'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(451,43): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(451,43): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(451,45): error C2039: '_student': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(461,43): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(461,43): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(461,45): error C2039: '_student': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(469,15): error C2440: 'return': cannot convert from 'int' to 'STUDENT'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(469,15): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(559,20): error C2678: binary '==': no operator found which takes a left-hand operand of type 'STUDENT' (or there is no acceptable conversion)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\guiddef.h(192,15): message : could be 'bool operator ==(const GUID &,const GUID &)'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(559,20): message : while trying to match the argument list '(STUDENT, int)'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(566,24): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(566,24): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(566,26): error C2039: '_student': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(567,56): error C2440: 'initializing': cannot convert from 'bool' to 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(567,56): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(568,35): error C2819: type 'student' does not have an overloaded member 'operator ->'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(568,35): message : did you intend to use '.' instead?
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(568,37): error C2039: '_student': is not a member of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(7): message : see declaration of 'student'
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(568,45): error C2660: 'IsDeletedStudentWithId': function does not take 1 arguments
+D:\WORKSPACE\C++\QLDSV\QuanLyDiemSinhVien\SinhVien.h(568,45): fatal error C1003: error count exceeds 100; stopping compilation
