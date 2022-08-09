@@ -1,6 +1,6 @@
 #ifndef _STUDENT_H
 #define _STUDENT_H
-#define MAXSINHVIEN 5000
+#define MAXSINHVIEN 2000
 //#define STUDENT_NULL null
 #pragma warning(disable : 4996)
 #include <sstream>
@@ -28,6 +28,18 @@ typedef struct ListStudent LIST_STUDENT;
 
 void InitListStudent(LIST_STUDENT& l)
 {
+	l.n = 0;
+	STUDENT st;
+	strcpy(st.fistName, "");
+	strcpy(st.idClass, "");
+	strcpy(st.idStudent, "");
+	strcpy(st.lastName, "");
+	st.mediumScore = 0;
+	st.sex = 0;
+	st.yearAdmission = 2022;
+	/*for (int i = 0; i < l.n; i++) {
+		l.ListST[i] = st;
+	}*/
 }
 
 void AddHeadListStudent(LIST_STUDENT& l, STUDENT data)
@@ -50,7 +62,7 @@ void AddTailListStudent(LIST_STUDENT& l, STUDENT data)
 {
 	l.ListST[l.n] = data;
 
-	++l.n;
+	l.n = l.n + 1;
 }
 
 bool FindStudent(LIST_STUDENT l, char* id)
@@ -185,9 +197,9 @@ void OutputListStudentWithIdClassPerPage(LIST_STUDENT l, int indexBegin)
 			break;
 		}
 	}*/
-
-	for (int i = indexBegin; i < indexBegin + QUANTITY_PER_PAGE - 1; i++) {
-		OutputStudent(l.ListST[i], i * 2);
+	
+	for (int i = indexBegin; i < indexBegin + QUANTITY_PER_PAGE - 1 && i<l.n; i++) {
+		OutputStudent(l.ListST[i],i);
 	}
 
 	Gotoxy(X_PAGE, Y_PAGE);
@@ -481,6 +493,7 @@ backMenu:
 			if (strcmp(l.ListST[i].idClass, (char*)idClass.c_str()) == 0)
 			{
 				AddTailListStudent(temp, l.ListST[i]);
+
 				n++;
 			}
 		}
