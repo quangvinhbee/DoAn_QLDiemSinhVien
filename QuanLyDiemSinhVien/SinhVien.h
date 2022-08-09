@@ -1,7 +1,9 @@
+#ifndef _STUDENT_H
 #define _STUDENT_H
 #define MAXSINHVIEN 5000
 //#define STUDENT_NULL null
 #pragma warning(disable : 4996)
+#include <sstream>
 #include"LopTinChi.h"
 
 struct student {
@@ -93,6 +95,7 @@ bool IsDeletedHead(LIST_STUDENT& l)
 	delete p;
 	--l.n;
 	return true;*/
+	return true;
 }
 
 bool IsDeletedTail(LIST_STUDENT& l)
@@ -113,6 +116,7 @@ bool IsDeletedTail(LIST_STUDENT& l)
 		}
 		beforeP = p;
 	}*/
+	return true;
 }
 
 bool IsDeletedAfter(LIST_STUDENT& l, STUDENT p)
@@ -123,6 +127,7 @@ bool IsDeletedAfter(LIST_STUDENT& l, STUDENT p)
 	delete nodeDeleted;
 	--l.n;
 	return true;*/
+	return true;
 }
 
 bool IsDeletedStudentWithId(LIST_STUDENT& l, STUDENT data)
@@ -138,6 +143,7 @@ bool IsDeletedStudentWithId(LIST_STUDENT& l, STUDENT data)
 	//		temp = temp->pNext;
 	//	return IsDeletedAfter(l, temp);
 	//}
+	return true;
 }
 
 // xoa danh sach Sinh vien
@@ -583,3 +589,5 @@ backMenu:
 	else
 		goto backMenu;
 }
+
+#endif

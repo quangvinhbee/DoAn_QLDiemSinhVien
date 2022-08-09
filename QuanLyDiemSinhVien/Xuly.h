@@ -362,7 +362,7 @@ backMenu:
 							//								}
 							//							}
 							//							NODE_REGISTERSTUDENT* p = ;
-							if (BinarySearchRegisterStudent(temp->listCreditClass[k]->listRegisterStudent, P->_student.idStudent) != NULL)
+							if (BinarySearchRegisterStudent(temp->listCreditClass[k]->listRegisterStudent, P.idStudent) != NULL)
 							{
 								flag = true;
 							}
@@ -457,7 +457,7 @@ bool StatisticStudentOnCreditClassIsSucceed(PTR_LISTCREDITCLASS l, TREE_SUBJECT 
 	{
 		STUDENT q;
 		for (int i = 0; i < listStudent.n; i++) {
-			if (listStudent.ListST[i].idStudent == p->_registerStudent.idStudent) {
+			if (strcmp(listStudent.ListST[i].idStudent, p->_registerStudent.idStudent) == 0) {
 				q = listStudent.ListST[i];
 			}
 		}
@@ -623,9 +623,9 @@ bool inputSocreCreditClassIsSuccedd(PTR_LISTCREDITCLASS& pListCC, TREE_SUBJECT t
 	{
 		STUDENT i;
 			//= FindStudent(l, k->_registerStudent.idStudent);
-		for (int j; j < l.n; j++) {
-			if (strcmp(l.ListST[j].idStudent, k->_registerStudent.idStudent) == 0) {
-				i = l.ListST[j];
+		for (int uu=0; uu < l.n; uu++) {
+			if (strcmp(l.ListST[uu].idStudent, k->_registerStudent.idStudent) == 0) {
+				i = l.ListST[uu];
 			}
 		}
 		AddTailListStudent(templs, i);
@@ -778,7 +778,7 @@ bool outputScoreSubjectOfCreditClass(PTR_LISTCREDITCLASS lcc, LIST_STUDENT l, TR
 
 	LIST_STUDENT temp;
 	InitListStudent(temp);
-	for (NODE_STUDENT* p = l.pHead; p != NULL; p = p->pNext)
+	/*for (NODE_STUDENT* p = l.pHead; p != NULL; p = p->pNext)
 	{
 		if (strcmp(p->_student.idClass, (char*)idClass.c_str()) == 0)
 		{
@@ -795,12 +795,29 @@ bool outputScoreSubjectOfCreditClass(PTR_LISTCREDITCLASS lcc, LIST_STUDENT l, TR
 				AddTailListStudent(temp, p->_student);
 			}
 		}
+	}*/
+	for (int i = 0; i < l.n; i++) {
+		if (strcmp(l.ListST[i].idClass, (char*)idClass.c_str()) == 0)
+		{
+			float temps = MediumScoreOfStudent(lcc, t, l.ListST[i].idStudent);
+			if (temps < 0)
+			{
+				temps = 0;
+				l.ListST[i].mediumScore = temps;
+				AddTailListStudent(temp, l.ListST[i]);
+			}
+			else
+			{
+				l.ListST[i].mediumScore = temps;
+				AddTailListStudent(temp, l.ListST[i]);
+			}
+		}
 	}
 	pageNowStudent = 1;
 	totalPageStudent = ((temp.n - 1) / QUANTITY_PER_PAGE) + 1;
 	clrscr();
 	Gotoxy(X_TITLE, Y_TITLE); cout << "BANG THONG KE DIEM TRUNG BINH KHOA HOC";
-	Gotoxy(X_TITLE + 2, Y_TITLE + 1); cout << "Lop: " << idClass << "  - Nam nhap hoc: " << temp.pHead->_student.yearAdmission;
+	Gotoxy(X_TITLE + 2, Y_TITLE + 1); cout << "Lop: " << idClass << "  - Nam nhap hoc: " << temp.ListST[0].yearAdmission;
 
 	Display(keyDisplayInputScoreCreditClass, sizeof(keyDisplayInputScoreCreditClass) / sizeof(string));
 	DeleteNote(sizeof(keyDisplayInputScoreCreditClass) / sizeof(string));
@@ -813,12 +830,12 @@ bool outputScoreSubjectOfCreditClass(PTR_LISTCREDITCLASS lcc, LIST_STUDENT l, TR
 		if (key == PAGE_UP && pageNowStudent > 1)
 		{
 			pageNowStudent--;
-			ChangePageManageStudent_1(temp, idClass, temp.pHead->_student.yearAdmission);
+			ChangePageManageStudent_1(temp, idClass, temp.ListST[0].yearAdmission);
 		}
 		else if (key == PAGE_DOWN && pageNowStudent < totalPageStudent)
 		{
 			pageNowStudent++;
-			ChangePageManageStudent_1(temp, idClass, temp.pHead->_student.yearAdmission);
+			ChangePageManageStudent_1(temp, idClass, temp.ListST[0].yearAdmission);
 		}
 		else if (key == ESC)
 		{

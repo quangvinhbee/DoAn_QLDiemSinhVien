@@ -358,13 +358,24 @@ void caucuoi(LIST_STUDENT l, PTR_LISTCREDITCLASS lcc, string idClass)
 	const int nIdSubject = 0;
 
 	//	initListReportStudent(l, idCLass);
-	for (NODE_STUDENT* p = l.pHead; p != NULL; p = p->pNext)
+	/*for (NODE_STUDENT* p = l.pHead; p != NULL; p = p->pNext)
 	{
 		if (_stricmp(p->_student.idClass, (char*)idClass.c_str()) == 0)
 		{
 			strcpy(prSubject[indexprSubject].idStudent, p->_student.idStudent);
 			strcpy(prSubject[indexprSubject].fistName, p->_student.fistName);
 			strcpy(prSubject[indexprSubject].lastName, p->_student.lastName);
+			InitListPointSubject(prSubject[indexprSubject].listPointSubject);
+			indexprSubject++;
+		}
+	}*/
+
+	for (int i = 0; i < l.n; i++) {
+		if (_stricmp(l.ListST[i].idClass, (char*)idClass.c_str()) == 0)
+		{
+			strcpy(prSubject[indexprSubject].idStudent, l.ListST[i].idStudent);
+			strcpy(prSubject[indexprSubject].fistName, l.ListST[i].fistName);
+			strcpy(prSubject[indexprSubject].lastName, l.ListST[i].lastName);
 			InitListPointSubject(prSubject[indexprSubject].listPointSubject);
 			indexprSubject++;
 		}
