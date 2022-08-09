@@ -258,7 +258,7 @@ void InputStudent(LIST_STUDENT& l, STUDENT& st, bool isEdited = false)
 			CheckMoveAndValidateID(phoneNumber, isMoveUp, ordinal, isSave, 20 + 7, 11);
 			break;
 		case 5:
-			CheckMoveAndValidateNumber(yearAdmission, isMoveUp, ordinal, isSave, 21 + 7, 2019);
+			CheckMoveAndValidateNumber(yearAdmission, isMoveUp, ordinal, isSave, 21 + 7, 2029);
 			break;
 		}
 
@@ -424,7 +424,7 @@ STUDENT ChooseStudent(LIST_STUDENT l)
 			return newNodeStudent;
 			break;
 		case 27:
-			return;
+			return newNodeStudent;
 			break;
 		}
 	}

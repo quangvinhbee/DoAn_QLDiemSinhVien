@@ -26,7 +26,7 @@ void inputDataFindCreditClass(int& schoolYear, int& semester, string& idStudent,
 				idIsExist = true;
 			break;
 		case 1:
-			CheckMoveAndValidateNumber(schoolYear, isMoveUp, ordinal, isSave, 31, 2019);
+			CheckMoveAndValidateNumber(schoolYear, isMoveUp, ordinal, isSave, 31, 2029);
 			break;
 		case 2:
 			CheckMoveAndValidateNumber(semester, isMoveUp, ordinal, isSave, 29, 3);
@@ -101,7 +101,7 @@ void input(string& idSubject, int& shoolYear, int& semester, int& group, TREE_SU
 			break;
 
 		case 1:
-			CheckMoveAndValidateNumber(shoolYear, isMoveUp, ordinal, isSave, 24, 2019);
+			CheckMoveAndValidateNumber(shoolYear, isMoveUp, ordinal, isSave, 24, 2029);
 			break;
 		case 2:
 			CheckMoveAndValidateNumber(semester, isMoveUp, ordinal, isSave, 24, 3);
@@ -179,8 +179,15 @@ void outputListScoreCreditClassPerPage(LIST_REGISTERSTUDENT lrs, LIST_STUDENT ls
 			int i = -1;
 			while (q != NULL && i < QUANTITY_PER_PAGE - 1)
 			{
-				NODE_STUDENT* p = FindStudent(ls, q->_registerStudent.idStudent);
-				outputScoreCretdiClass(p->_student, q->_registerStudent, (++i) * 2);
+				STUDENT p;
+				//= FindStudent(ls, q->_registerStudent.idStudent);
+				for (int i = 0; i < ls.n; i++) {
+					if (ls.ListST[i].idStudent == q->_registerStudent.idStudent) {
+						p = ls.ListST[i];
+						break;
+					}
+				}
+				outputScoreCretdiClass(p, q->_registerStudent, (++i) * 2);
 				q = q->pNext;
 			}
 			break;
@@ -224,14 +231,14 @@ NODE_REGISTERSTUDENT* ChooseStudentForScoreCreditClass(LIST_STUDENT ls, LIST_REG
 	currposPrecStudent = (pageNowStudent - 1) * QUANTITY_PER_PAGE;
 	totalPageStudent = ((lrs.n - 1) / QUANTITY_PER_PAGE) + 1;
 
-	NODE_STUDENT* newNodeStudent = FindStudentByOrdinal(ls, currposStudent);
-	NODE_STUDENT* oldNodeStudent = NULL;
+	STUDENT newNodeStudent = FindStudentByOrdinal(ls, currposStudent);
+	STUDENT oldNodeStudent;
 
 	NODE_REGISTERSTUDENT* newNodeRS = FindRegisterStudentByOrdinal(lrs, currposStudent);
 	NODE_REGISTERSTUDENT* oldNodeRS = NULL;
 
 	outputListScoreCreditClassPerPage(lrs, ls, (pageNowStudent - 1) * QUANTITY_PER_PAGE);
-	SetDefaultChooseScoreCreditClass(newNodeStudent->_student, newNodeRS->_registerStudent, currposStudent);
+	SetDefaultChooseScoreCreditClass(newNodeStudent, newNodeRS->_registerStudent, currposStudent);
 
 	while (true)
 	{
@@ -247,22 +254,28 @@ NODE_REGISTERSTUDENT* ChooseStudentForScoreCreditClass(LIST_STUDENT ls, LIST_REG
 				oldNodeStudent = newNodeStudent;
 				oldNodeRS = newNodeRS;
 
-				for (newNodeStudent = ls.pHead; newNodeStudent->pNext != oldNodeStudent; newNodeStudent = newNodeStudent->pNext);
+				//for (newNodeStudent = ls.pHead; newNodeStudent->pNext != oldNodeStudent; newNodeStudent = newNodeStudent->pNext);
+				int i = 0;
+				for (i; i < ls.n; i++) {
+					if (strcmp(newNodeStudent.idStudent, oldNodeStudent.idStudent) == 0) {
+						break;
+					}
+				}
 				for (newNodeRS = lrs.pHead; newNodeRS->pNext != oldNodeRS; newNodeRS = newNodeRS->pNext);
-				EffectiveMenuScoreCreditClass(currposStudent, newNodeStudent->_student, oldNodeStudent->_student, newNodeRS->_registerStudent, oldNodeRS->_registerStudent);
+				EffectiveMenuScoreCreditClass(currposStudent, ls.ListST[i], oldNodeStudent, newNodeRS->_registerStudent, oldNodeRS->_registerStudent);
 			}
 			break;
 		case KEY_DOWN:
-			if (currposStudent % QUANTITY_PER_PAGE < QUANTITY_PER_PAGE - 1 && newNodeStudent->pNext != NULL)
+			if (currposStudent % QUANTITY_PER_PAGE < QUANTITY_PER_PAGE - 1)
 			{
 				currposStudent = currposStudent + 1;
 				oldNodeStudent = newNodeStudent;
-				newNodeStudent = newNodeStudent->pNext;
+				newNodeStudent = newNodeStudent;
 
 				oldNodeRS = newNodeRS;
 				newNodeRS = newNodeRS->pNext;
 
-				EffectiveMenuScoreCreditClass(currposStudent, newNodeStudent->_student, oldNodeStudent->_student, newNodeRS->_registerStudent, oldNodeRS->_registerStudent);
+				EffectiveMenuScoreCreditClass(currposStudent, newNodeStudent, oldNodeStudent, newNodeRS->_registerStudent, oldNodeRS->_registerStudent);
 			}
 			break;
 		case PAGE_DOWN:
@@ -274,7 +287,7 @@ NODE_REGISTERSTUDENT* ChooseStudentForScoreCreditClass(LIST_STUDENT ls, LIST_REG
 
 				newNodeStudent = FindStudentByOrdinal(ls, currposStudent);
 				newNodeRS = FindRegisterStudentByOrdinal(lrs, currposStudent);
-				SetDefaultChooseScoreCreditClass(newNodeStudent->_student, newNodeRS->_registerStudent, currposStudent);
+				SetDefaultChooseScoreCreditClass(newNodeStudent, newNodeRS->_registerStudent, currposStudent);
 
 			}
 			break;
@@ -286,7 +299,7 @@ NODE_REGISTERSTUDENT* ChooseStudentForScoreCreditClass(LIST_STUDENT ls, LIST_REG
 				outputListScoreCreditClassPerPage(lrs, ls, (pageNowStudent - 1) * QUANTITY_PER_PAGE);
 				newNodeStudent = FindStudentByOrdinal(ls, currposStudent);
 				newNodeRS = FindRegisterStudentByOrdinal(lrs, currposStudent);
-				SetDefaultChooseScoreCreditClass(newNodeStudent->_student, newNodeRS->_registerStudent, currposStudent);
+				SetDefaultChooseScoreCreditClass(newNodeStudent, newNodeRS->_registerStudent, currposStudent);
 			}
 			break;
 		case ENTER:  //enter
@@ -404,7 +417,7 @@ void outputMediumScoreOfStudentPerPage(LIST_STUDENT ls, int indexBegin)
 	if (ls.n == 0) return;
 	int counts = -1;
 
-	for (NODE_STUDENT* q = ls.pHead; q != NULL; q = q->pNext)
+	/*for (NODE_STUDENT* q = ls.pHead; q != NULL; q = q->pNext)
 	{
 		counts++;
 		if (counts == indexBegin)
@@ -414,6 +427,20 @@ void outputMediumScoreOfStudentPerPage(LIST_STUDENT ls, int indexBegin)
 			{
 				outputMediumScoreOfStudent(q->_student, (++i) * 2);
 				q = q->pNext;
+			}
+			break;
+		}
+	}*/
+
+	for (int i = 0; i < ls.n; i++) {
+		counts++;
+		if (counts == indexBegin)
+		{
+			int i = -1;
+			while (ls.ListST[i].idStudent != NULL && i < QUANTITY_PER_PAGE - 1)
+			{
+				outputMediumScoreOfStudent(ls.ListST[i], (++i) * 2);
+				/*q = q->pNext;*/
 			}
 			break;
 		}
@@ -442,7 +469,7 @@ void outputListScoreCreditClassPerPage1(LIST_REGISTERSTUDENT lrs, LIST_STUDENT l
 	if (ls.n == 0) return;
 	int counts = -1;
 
-	for (NODE_STUDENT* q = ls.pHead; q != NULL; q = q->pNext)
+	/*for (NODE_STUDENT* q = ls.pHead; q != NULL; q = q->pNext)
 	{
 
 		counts++;
@@ -454,6 +481,21 @@ void outputListScoreCreditClassPerPage1(LIST_REGISTERSTUDENT lrs, LIST_STUDENT l
 				NODE_REGISTERSTUDENT* p = FindRegisterStudent(lrs, q->_student.idStudent);
 				outputScoreCretdiClass(q->_student, p->_registerStudent, (++i) * 2);
 				q = q->pNext;
+			}
+			break;
+		}
+	}*/
+
+	for (int i = 0; i < ls.n; i++) {
+		counts++;
+		if (counts == indexBegin)
+		{
+			int i = -1;
+			while (ls.ListST[i].idStudent != NULL && i < QUANTITY_PER_PAGE - 1)
+			{
+				NODE_REGISTERSTUDENT* p = FindRegisterStudent(lrs, ls.ListST[i].idStudent);
+				outputScoreCretdiClass(ls.ListST[i], p->_registerStudent, (++i) * 2);
+				/*q = q->pNext;*/
 			}
 			break;
 		}

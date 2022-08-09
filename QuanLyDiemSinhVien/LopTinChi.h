@@ -248,7 +248,7 @@ void InputCreditClass(PTR_LISTCREDITCLASS& l, PTR_CREDITCLASS& cc, TREE_SUBJECT 
 			break;
 
 		case 1:
-			CheckMoveAndValidateNumber(shoolYear, isMoveUp, ordinal, isSave, 24, 2019);
+			CheckMoveAndValidateNumber(shoolYear, isMoveUp, ordinal, isSave, 24, 2029);
 			break;
 		case 2:
 			CheckMoveAndValidateNumber(semester, isMoveUp, ordinal, isSave, 28, 3);
@@ -547,6 +547,7 @@ backMenu:
 					pageNowCreditClass--;
 					ChangePageManageCreaditClass(l, t);
 				}
+				
 			}
 			else if (key == ESC)
 				return;

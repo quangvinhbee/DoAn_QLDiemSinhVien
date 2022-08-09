@@ -291,8 +291,8 @@ void CheckMoveAndValidateNumber(int& result, bool& isMove, int& ordinal, bool& i
 					else
 						if (result * 10 + (f) <= condition)
 						{
-							cout << f;
 							result = result * 10 + (f);
+							cout << result;
 							count++;
 						}
 				}
